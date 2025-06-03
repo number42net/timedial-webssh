@@ -45,15 +45,21 @@
   </style>
 </head>
 
-<body>
+<body background="static/img/recbg.jpg">
   <div id="waiter" style="display: none"> Connecting ... </div>
 
   <div class="container form-container" style="display: none">
     <form id="connect" action="" method="post" enctype="multipart/form-data" {% if debug %} novalidate{% end %}>
       <div class="row">
-        <div class="col"><b>Login using <i>guest</i> / <i>guest</i> to create your account.</b></div>
+        <div class="col">
+          <center><img src="/static/img/banner.gif" alt="Banner"></center>
+          <hr>
+        </div>
       </div>
-
+      <div class="row">
+        <div class="col"><b>Login using <i>guest</i> / <i>guest</i> to create your account.</b></div>
+        <hr>
+      </div>
       <div class="row">
         <div class="col">
           <!-- <label for="Hostname">Hostname</label> -->
@@ -66,12 +72,14 @@
       </div>
       <div class="row">
         <div class="col">
-          <label for="Username">Username</label>
-          <input class="form-control" type="text" id="username" name="username" value="guest" required>
+          <label>Username: </label>
+          <input type="text" id="username" name="username" value="guest" required>
         </div>
+      </div>
+      <div class="row">
         <div class="col">
-          <label for="Password">Password</label>
-          <input class="form-control" type="password" id="password" name="password" value="guest">
+          <label>Password: </label>
+          <input type="password" id="password" name="password" value="guest">
         </div>
       </div>
       <!-- <div class="row">
@@ -94,8 +102,8 @@
       </div> -->
       <input type="hidden" id="term" name="term" value="xterm-256color">
       {% module xsrf_form_html() %}
-      <button type="submit" class="btn btn-primary">Connect</button>
-      <button type="reset" class="btn btn-danger">Reset</button>
+      <button type="submit">Connect</button>
+      <button type="reset">Reset</button>
     </form>
   </div>
 
